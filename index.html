@@ -398,7 +398,7 @@
                     <p>STK: <span id="stk-groom" class="font-mono font-semibold text-burgundy">0731000774448</span></p>
                 </div>
 
-                <button onclick="copyToClipboard('1234567890', 'Đã sao chép số tài khoản Chú Rể!')" class="px-5 py-2.5 bg-burgundy/10 hover:bg-burgundy text-burgundy hover:text-white rounded-xl text-xs font-semibold transition border border-burgundy/30">
+                <button onclick="copyToClipboard('0731000774448', 'Đã sao chép số tài khoản Chú Rể!')" class="px-5 py-2.5 bg-burgundy/10 hover:bg-burgundy text-burgundy hover:text-white rounded-xl text-xs font-semibold transition border border-burgundy/30">
                     <i class="fa-regular fa-copy mr-1"></i> Sao chép STK
                 </button>
             </div>
@@ -527,7 +527,7 @@
                 isPlaying = true;
                 document.getElementById('music-control').style.display = 'flex';
                 document.getElementById('vinyl-icon').classList.add('animate-spin');
-                showToast('Đang phát nhạc: Until I Found You');
+                showToast('Đang phát nhạc: Until You');
             }).catch(e => {
                 document.getElementById('music-control').style.display = 'flex';
                 showToast('Bấm nút nhạc ở góc phải màn hình để phát nhạc');
@@ -546,7 +546,7 @@
                     isPlaying = true;
                     document.getElementById('vinyl-icon').classList.add('animate-spin');
                     document.getElementById('music-icon').className = 'fa-solid fa-volume-high text-gold ml-1';
-                    showToast('Đang phát nhạc: Until I Found You');
+                    showToast('Đang phát nhạc: Until You');
                 }).catch(err => {
                     showToast('Không thể phát nhạc, thử ấn lại lần nữa');
                 });
