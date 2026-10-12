@@ -138,9 +138,9 @@
         </div>
     </div>
 
+    <!-- NGUỒN NHẠC NỀN (music.mp3) -->
     <audio id="wedding-audio" loop preload="auto">
-        <source src="https://audio.jukehost.co.uk/q1mYd0d6l6rB8g0Z1s8x8f7s6d5f4g3h" type="audio/mpeg">
-        <source src="https://actions.google.com/sounds/v1/ambiences/coffee_shop.ogg" type="audio/ogg">
+        <source src="music.mp3" type="audio/mpeg">
     </audio>
 
     <div id="music-control" class="fixed bottom-6 right-6 z-40 hidden items-center space-x-2 bg-burgundy/90 text-white px-4 py-2.5 rounded-full shadow-2xl border border-gold/50 backdrop-blur-md cursor-pointer transition-all hover:bg-burgundy" onclick="toggleMusic()">
@@ -149,7 +149,7 @@
                 <i class="fa-solid fa-compact-disc text-burgundy text-xs"></i>
             </div>
         </div>
-        <span id="music-status-text" class="text-xs font-medium tracking-wide">I Do - Đức Phúc</span>
+        <span id="music-status-text" class="text-xs font-medium tracking-wide">Nhạc Đám Cưới</span>
         <i id="music-icon" class="fa-solid fa-volume-high text-gold ml-1"></i>
     </div>
 
@@ -250,13 +250,13 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <!-- Ảnh Chú Rể -->
+                <!-- Chú rể -->
                 <div class="glass-card rounded-3xl p-8 shadow-xl border border-gold/30 text-center relative overflow-hidden group">
                     <div class="absolute top-0 right-0 bg-burgundy text-gold px-4 py-1.5 rounded-bl-2xl text-xs font-semibold uppercase tracking-wider">
                         Nhà Trai
                     </div>
                     <div class="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-gold shadow-lg relative">
-                        <img src="chure.jpg" alt="Chú rể Nguyễn Văn Trường" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://placehold.co/400x400/7a0000/faf6f0?text=Truong'">
+                        <img src="chure.jpg" alt="Chú rể Nguyễn Văn Trường" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                     </div>
                     <h3 class="font-serif text-3xl font-bold text-burgundy mb-2">Nguyễn Văn Trường</h3>
                     <p class="text-gold font-medium text-sm mb-4">Chú Rể</p>
@@ -267,13 +267,13 @@
                     </div>
                 </div>
 
-                <!-- Ảnh Cô Dâu -->
+                <!-- Cô dâu -->
                 <div class="glass-card rounded-3xl p-8 shadow-xl border border-gold/30 text-center relative overflow-hidden group">
                     <div class="absolute top-0 right-0 bg-burgundy text-gold px-4 py-1.5 rounded-bl-2xl text-xs font-semibold uppercase tracking-wider">
                         Nhà Gái
                     </div>
                     <div class="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-gold shadow-lg relative">
-                        <img src="codau.jpg" alt="Cô dâu Nông Thu Huyền" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://placehold.co/400x400/7a0000/faf6f0?text=Huyen'">
+                        <img src="codau.jpg" alt="Cô dâu Nông Thu Huyền" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                     </div>
                     <h3 class="font-serif text-3xl font-bold text-burgundy mb-2">Nông Thu Huyền</h3>
                     <p class="text-gold font-medium text-sm mb-4">Cô Dâu</p>
@@ -345,7 +345,7 @@
         </div>
     </section>
 
-    <!-- GALLERY SECTION (7 ẢNH ALBUM) -->
+    <!-- GALLERY SECTION (7 ẢNH ĐƯỜNG DẪN ĐÚNG TRÊN GITHUB) -->
     <section id="gallery" class="py-20 bg-cream-dark relative">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center max-w-2xl mx-auto mb-12">
@@ -397,7 +397,7 @@
         <img id="lightbox-img" src="" alt="Zoomed wedding photo" class="max-w-full max-h-[90vh] rounded-xl shadow-2xl object-contain">
     </div>
 
-    <!-- GIFTING SECTION -->
+    <!-- GIFTING SECTION (QR CODE) -->
     <section id="gifting" class="py-20 bg-cream relative">
         <div class="max-w-xl mx-auto px-4">
             <div class="text-center max-w-2xl mx-auto mb-12">
@@ -552,10 +552,10 @@
                 isPlaying = true;
                 document.getElementById('music-control').style.display = 'flex';
                 document.getElementById('vinyl-icon').classList.add('animate-spin');
-                showToast('Đang phát nhạc: I Do - Đức Phúc');
+                showToast('Đang phát nhạc nền');
             }).catch(e => {
                 document.getElementById('music-control').style.display = 'flex';
-                showToast('Nhấn vào nút góc phải để bật nhạc');
+                showToast('Nhấn vào nút nhạc góc phải để bật nhạc');
             });
         }
 
@@ -571,9 +571,9 @@
                     isPlaying = true;
                     document.getElementById('vinyl-icon').classList.add('animate-spin');
                     document.getElementById('music-icon').className = 'fa-solid fa-volume-high text-gold ml-1';
-                    showToast('Đang phát nhạc: I Do - Đức Phúc');
+                    showToast('Đang phát nhạc nền');
                 }).catch(err => {
-                    showToast('Không thể phát nhạc, vui lòng thử lại');
+                    showToast('Không thể phát nhạc, vui lòng tải lên file music.mp3');
                 });
             }
         }
