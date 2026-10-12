@@ -54,8 +54,8 @@
             font-family: 'Cormorant Garamond', serif;
         }
         ::-webkit-scrollbar {
-            height: 8px;
-            width: 8px;
+            height: 6px;
+            width: 6px;
         }
         ::-webkit-scrollbar-track {
             background: #faf6f0;
@@ -88,25 +88,6 @@
             0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(122, 0, 0, 0.6); }
             70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(122, 0, 0, 0); }
             100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(122, 0, 0, 0); }
-        }
-        .gallery-container {
-            scroll-snap-type: x mandatory;
-            scroll-behavior: smooth;
-            -webkit-overflow-scrolling: touch;
-        }
-        .gallery-item {
-            scroll-snap-align: center;
-            transition: all 0.4s ease;
-            transform: scale(0.88);
-            opacity: 0.6;
-            filter: grayscale(30%);
-        }
-        .gallery-item.active {
-            transform: scale(1.05);
-            opacity: 1;
-            filter: grayscale(0%);
-            box-shadow: 0 20px 25px -5px rgba(122, 0, 0, 0.3), 0 10px 10px -5px rgba(212, 175, 55, 0.2);
-            border: 2px solid #d4af37;
         }
     </style>
 </head>
@@ -149,7 +130,6 @@
                 <i class="fa-solid fa-compact-disc text-burgundy text-xs"></i>
             </div>
         </div>
-        <!-- TÊN BÀI HÁT ĐÃ ĐỔI THÀNH "Until I Found You" -->
         <span id="music-status-text" class="text-xs font-medium tracking-wide">Until I Found You</span>
         <i id="music-icon" class="fa-solid fa-volume-high text-gold ml-1"></i>
     </div>
@@ -346,48 +326,42 @@
         </div>
     </section>
 
-    <!-- GALLERY SECTION -->
-    <section id="gallery" class="py-20 bg-cream-dark relative">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="text-center max-w-2xl mx-auto mb-12">
+    <!-- GALLERY SECTION (8 ẢNH ALBUM) -->
+    <section id="gallery" class="py-16 md:py-20 bg-cream-dark relative">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center max-w-2xl mx-auto mb-10">
                 <span class="text-gold font-semibold tracking-widest uppercase text-xs">KỶ NIỆM NGÀY CƯỚI</span>
-                <h2 class="font-serif text-4xl md:text-5xl font-bold text-burgundy mt-2 mb-4">Album Ảnh Hạnh Phúc</h2>
+                <h2 class="font-serif text-3xl md:text-5xl font-bold text-burgundy mt-2 mb-4">Album Ảnh Hạnh Phúc</h2>
                 <div class="w-16 h-0.5 bg-gold mx-auto"></div>
-                <p class="text-gray-600 mt-4 text-sm">Vuốt ngang để xem album. Ảnh nổi bật ở trung tâm!</p>
+                <p class="text-gray-600 mt-3 text-xs md:text-sm">Chạm vào ảnh để phóng to xem rõ hơn!</p>
             </div>
 
-            <div class="relative group">
-                <button onclick="scrollGallery(-1)" class="absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-burgundy/80 hover:bg-burgundy text-gold w-10 h-10 rounded-full flex items-center justify-center shadow-lg border border-gold/40 transition">
-                    <i class="fa-solid fa-chevron-left"></i>
-                </button>
-                
-                <div id="gallery-carousel" class="gallery-container flex items-center overflow-x-auto py-10 px-[35vw] space-x-4 no-scrollbar">
-                    <div class="gallery-item min-w-[280px] sm:min-w-[320px] h-[420px] rounded-2xl overflow-hidden cursor-pointer shadow-lg flex-shrink-0" onclick="openLightbox(this)">
-                        <img src="gallery-1.jpg" alt="Wedding 1" class="w-full h-full object-cover">
-                    </div>
-                    <div class="gallery-item min-w-[280px] sm:min-w-[320px] h-[420px] rounded-2xl overflow-hidden cursor-pointer shadow-lg flex-shrink-0" onclick="openLightbox(this)">
-                        <img src="gallery-2.jpg" alt="Wedding 2" class="w-full h-full object-cover">
-                    </div>
-                    <div class="gallery-item min-w-[280px] sm:min-w-[320px] h-[420px] rounded-2xl overflow-hidden cursor-pointer shadow-lg flex-shrink-0" onclick="openLightbox(this)">
-                        <img src="gallery-3.jpg" alt="Wedding 3" class="w-full h-full object-cover">
-                    </div>
-                    <div class="gallery-item min-w-[280px] sm:min-w-[320px] h-[420px] rounded-2xl overflow-hidden cursor-pointer shadow-lg flex-shrink-0" onclick="openLightbox(this)">
-                        <img src="gallery-4.jpg" alt="Wedding 4" class="w-full h-full object-cover">
-                    </div>
-                    <div class="gallery-item min-w-[280px] sm:min-w-[320px] h-[420px] rounded-2xl overflow-hidden cursor-pointer shadow-lg flex-shrink-0" onclick="openLightbox(this)">
-                        <img src="gallery-5.jpg" alt="Wedding 5" class="w-full h-full object-cover">
-                    </div>
-                    <div class="gallery-item min-w-[280px] sm:min-w-[320px] h-[420px] rounded-2xl overflow-hidden cursor-pointer shadow-lg flex-shrink-0" onclick="openLightbox(this)">
-                        <img src="gallery-6.jpg" alt="Wedding 6" class="w-full h-full object-cover">
-                    </div>
-                    <div class="gallery-item min-w-[280px] sm:min-w-[320px] h-[420px] rounded-2xl overflow-hidden cursor-pointer shadow-lg flex-shrink-0" onclick="openLightbox(this)">
-                        <img src="gallery-7.jpg" alt="Wedding 7" class="w-full h-full object-cover">
-                    </div>
+            <!-- Khung hiển thị 8 ảnh gọn gàng, không bị trườn vỡ khung -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+                <div class="aspect-[3/4] rounded-2xl overflow-hidden shadow-lg border-2 border-gold/30 cursor-pointer transform transition duration-300 hover:scale-105" onclick="openLightbox(this)">
+                    <img src="gallery-1.jpg" alt="Wedding 1" class="w-full h-full object-cover">
                 </div>
-
-                <button onclick="scrollGallery(1)" class="absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-burgundy/80 hover:bg-burgundy text-gold w-10 h-10 rounded-full flex items-center justify-center shadow-lg border border-gold/40 transition">
-                    <i class="fa-solid fa-chevron-right"></i>
-                </button>
+                <div class="aspect-[3/4] rounded-2xl overflow-hidden shadow-lg border-2 border-gold/30 cursor-pointer transform transition duration-300 hover:scale-105" onclick="openLightbox(this)">
+                    <img src="gallery-2.jpg" alt="Wedding 2" class="w-full h-full object-cover">
+                </div>
+                <div class="aspect-[3/4] rounded-2xl overflow-hidden shadow-lg border-2 border-gold/30 cursor-pointer transform transition duration-300 hover:scale-105" onclick="openLightbox(this)">
+                    <img src="gallery-3.jpg" alt="Wedding 3" class="w-full h-full object-cover">
+                </div>
+                <div class="aspect-[3/4] rounded-2xl overflow-hidden shadow-lg border-2 border-gold/30 cursor-pointer transform transition duration-300 hover:scale-105" onclick="openLightbox(this)">
+                    <img src="gallery-4.jpg" alt="Wedding 4" class="w-full h-full object-cover">
+                </div>
+                <div class="aspect-[3/4] rounded-2xl overflow-hidden shadow-lg border-2 border-gold/30 cursor-pointer transform transition duration-300 hover:scale-105" onclick="openLightbox(this)">
+                    <img src="gallery-5.jpg" alt="Wedding 5" class="w-full h-full object-cover">
+                </div>
+                <div class="aspect-[3/4] rounded-2xl overflow-hidden shadow-lg border-2 border-gold/30 cursor-pointer transform transition duration-300 hover:scale-105" onclick="openLightbox(this)">
+                    <img src="gallery-6.jpg" alt="Wedding 6" class="w-full h-full object-cover">
+                </div>
+                <div class="aspect-[3/4] rounded-2xl overflow-hidden shadow-lg border-2 border-gold/30 cursor-pointer transform transition duration-300 hover:scale-105" onclick="openLightbox(this)">
+                    <img src="gallery-7.jpg" alt="Wedding 7" class="w-full h-full object-cover">
+                </div>
+                <div class="aspect-[3/4] rounded-2xl overflow-hidden shadow-lg border-2 border-gold/30 cursor-pointer transform transition duration-300 hover:scale-105" onclick="openLightbox(this)">
+                    <img src="gallery-8.jpg" alt="Wedding 8" class="w-full h-full object-cover">
+                </div>
             </div>
         </div>
     </section>
@@ -420,8 +394,8 @@
                 </div>
                 
                 <div class="text-sm text-gray-600 space-y-1 mb-4">
-                    <p>Ngân hàng: <span class="font-semibold text-gray-800">Vietcombank</span></p>
-                    <p>STK: <span id="stk-groom" class="font-mono font-semibold text-burgundy">0731000774448</span></p>
+                    <p>Ngân hàng: <span class="font-semibold text-gray-800">Vietcombank / MB Bank</span></p>
+                    <p>STK: <span id="stk-groom" class="font-mono font-semibold text-burgundy">1234567890 (Tự thêm sau)</span></p>
                 </div>
 
                 <button onclick="copyToClipboard('1234567890', 'Đã sao chép số tài khoản Chú Rể!')" class="px-5 py-2.5 bg-burgundy/10 hover:bg-burgundy text-burgundy hover:text-white rounded-xl text-xs font-semibold transition border border-burgundy/30">
@@ -605,41 +579,6 @@
         }
         setInterval(updateCountdown, 1000);
         updateCountdown();
-
-        const galleryContainer = document.getElementById('gallery-carousel');
-        const galleryItems = document.querySelectorAll('.gallery-item');
-
-        function updateActiveGalleryCard() {
-            if (!galleryContainer) return;
-            const containerRect = galleryContainer.getBoundingClientRect();
-            const containerCenter = containerRect.left + containerRect.width / 2;
-
-            let closestItem = null;
-            let minDistance = Infinity;
-
-            galleryItems.forEach(item => {
-                const itemRect = item.getBoundingClientRect();
-                const itemCenter = itemRect.left + itemRect.width / 2;
-                const distance = Math.abs(containerCenter - itemCenter);
-
-                if (distance < minDistance) {
-                    minDistance = distance;
-                    closestItem = item;
-                }
-            });
-
-            galleryItems.forEach(item => item.classList.remove('active'));
-            if (closestItem) closestItem.classList.add('active');
-        }
-
-        galleryContainer.addEventListener('scroll', updateActiveGalleryCard);
-        window.addEventListener('resize', updateActiveGalleryCard);
-        setTimeout(updateActiveGalleryCard, 500);
-
-        function scrollGallery(direction) {
-            const scrollAmount = 320;
-            galleryContainer.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
-        }
 
         function openLightbox(element) {
             const lightbox = document.getElementById('lightbox');
